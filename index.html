@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prezident Maktabi Matematika Tayyorlov</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Prezident maktabi uchun matematika mashqlari</p>
+        <h1>Hafta mavzusini kiriting va 7 kunlik topshiriq oling</h1>
+        <p class="hero-text">
+          Bu versiya yengil ishlaydi: mavzuni yozasiz, sayt 7 kun uchun har kuni 15 tadan
+          test savolini va javoblarini tayyorlaydi.
+        </p>
+      </div>
+
+      <aside class="countdown-card">
+        <p class="countdown-label">Imtihongacha qoldi</p>
+        <div class="countdown-days" id="countdown-days">0</div>
+        <p class="countdown-date">15 iyul 2027</p>
+        <p class="countdown-note" id="countdown-note">Bugungi sana asosida hisoblanadi.</p>
+      </aside>
+    </header>
+
+    <main>
+      <section class="panel controls-panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-kicker">Generator</p>
+            <h2>Haftalik topshiriq yaratish</h2>
+          </div>
+          <div class="action-row">
+            <button type="button" class="ghost-button" id="pdf-button">PDF yuklab olish</button>
+            <button type="button" class="ghost-button" id="print-button">Chop etish</button>
+          </div>
+        </div>
+
+        <div class="mode-switch" id="mode-switch">
+          <button type="button" class="mode-button active" data-mode="topic">1-bo'lim: Mavzuli mashqlar</button>
+          <button type="button" class="mode-button" data-mode="exam">2-bo'lim: Imtihon uslubi</button>
+          <button type="button" class="mode-button" data-mode="example">3-bo'lim: Rasm namunasi</button>
+        </div>
+
+        <form id="generator-form" class="simple-form">
+          <label>
+            <span>Hafta mavzusi</span>
+            <input id="topic-input" type="text" value="Kasrlar, geometriya" placeholder="Masalan, kasrlar, geometriya, foizlar">
+          </label>
+
+          <label>
+            <span>O'quvchi ismi</span>
+            <input id="student-input" type="text" placeholder="Masalan, Abdulloh">
+          </label>
+
+          <label>
+            <span>Hafta sarlavhasi</span>
+            <input id="title-input" type="text" value="1-hafta mashqlari">
+          </label>
+
+          <button type="submit" class="primary-button">7 kunlik to'plam yaratish</button>
+        </form>
+
+        <div class="example-panel" id="example-panel" hidden>
+          <div class="example-grid">
+            <label>
+              <span>Misol sahifalari rasmi</span>
+              <input id="example-images" type="file" accept="image/*" multiple>
+            </label>
+
+            <label>
+              <span>Misollar haqida qisqa izoh</span>
+              <textarea id="example-notes" rows="4" placeholder="Masalan: kasrlar, diagramma, vaqt, mantiqiy masalalar"></textarea>
+            </label>
+          </div>
+          <div id="example-preview" class="example-preview">
+            <p class="hero-text">Rasm yuklanganda shu yerda ko'rinadi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel status-panel">
+        <p id="status-text">Sayt tayyor. Mavzuni kiriting va tugmani bosing.</p>
+        <p id="pdf-help" class="status-help">PDF uchun: to'plam yaratilgandan keyin `PDF yuklab olish` tugmasini bosing va brauzerda `Save as PDF` ni tanlang.</p>
+      </section>
+
+      <section class="panel summary-panel">
+        <div>
+          <p class="section-kicker">Reja</p>
+          <h2 id="summary-title">Hozircha to'plam yaratilmagan</h2>
+        </div>
+        <div class="summary-pills">
+          <span class="pill" id="summary-mode">Bo'lim: 1</span>
+          <span class="pill" id="summary-topic">Mavzu: -</span>
+          <span class="pill">Har kuni: 15 ta savol</span>
+          <span class="pill">Kunlar: 7 ta</span>
+          <span class="pill">Format: javoblar alohida</span>
+        </div>
+      </section>
+
+      <section class="panel" id="result-panel">
+        <div id="result-content" class="result-content">
+          <p class="hero-text">Bu yerda tayyor haftalik topshiriqlar ko'rinadi.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
